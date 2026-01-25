@@ -19,29 +19,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
-# Inherit from x1s device
-$(call inherit-product, device/samsung/x1s/device.mk)
+# Inherit from c1s device
+$(call inherit-product, device/samsung/c1s/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := x1s
-PRODUCT_NAME := lineage_x1s
+PRODUCT_DEVICE := c1s
+PRODUCT_NAME := lineage_c1s
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-G981B
+PRODUCT_MODEL := SM-N980F
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 # Use the latest approved GMS identifiers
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceProduct=x1sxxx \
-    SystemName=x1sxxx \
-    BuildFingerprint=samsung/x1sxxx/x1s:11/RP1A.200720.012/G981BXXSNHYB1:user/release-keys \
-    BuildDesc="x1sxxx-user 11 RP1A.200720.012 G981BXXSNHYB1 release-keys"
+    DeviceProduct=c1sxxx \
+    SystemName=c1sxxx \
+    BuildFingerprint=samsung/c1sxxx/c1s:11/RP1A.200720.012/N980FXXSIHYH3:user/release-keys \
+    BuildDesc="c1sxxx-user 11 RP1A.200720.012 N980FXXSIHYH3 release-keys"
 
 # Define PDA property for camera
 PRODUCT_SYSTEM_PROPERTIES += \
-    ro.build.PDA=G981BXXSNHYB1
+    ro.build.PDA=N980FXXSIHYH3

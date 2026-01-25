@@ -31,15 +31,11 @@ PRODUCT_PACKAGES += \
     libbt-vendor:64
 
 # Boot Animation
-TARGET_SCREEN_HEIGHT := 3200
-TARGET_SCREEN_WIDTH := 1440
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
 # Camera
 $(call soong_config_set,samsungCameraVars,extra_ids,52) # ID=52 is telephoto
-
-# Density mapping config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/display/display_id_4633128672291735937.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4633128672291735937.xml
 
 # Overlays 
 PRODUCT_PACKAGES += \
@@ -47,10 +43,6 @@ PRODUCT_PACKAGES += \
     SettingsProviderOverlayDevice \
     SystemUIOverlayDevice \
     WiFiOverlayDevice
-
-# Sensors
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -72,8 +64,8 @@ PRODUCT_COPY_FILES += \
 
 $(call soong_config_set_bool,wpa_supplicant_8,board_wlan_bcmdhd_sae,true)
 
-# Inherit from Hubble
-$(call inherit-product, device/samsung/universal9830-common/device-hubble.mk)
+# Inherit from Canvas
+$(call inherit-product, device/samsung/universal9830-common/device-canvas.mk)
 
 # Inherit from the proprietary version
-$(call inherit-product-if-exists, vendor/samsung/x1s/x1s-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/c1s/c1s-vendor.mk)
