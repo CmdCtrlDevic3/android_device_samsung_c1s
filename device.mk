@@ -44,6 +44,9 @@ PRODUCT_PACKAGES += \
     SystemUIOverlayDevice \
     WiFiOverlayDevice
 
+# SDCard
+$(call soong_config_set_bool,universal9830,no_sdcard,true)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
